@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Color-Picker</title>
+
+  <style>
+
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .left-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="left">
+      <form class="left-form" action="index.html" method="post">
+
+        <input type="text" id="enter_title" name="title" value="">
+        <input type="color" id="pick_c1" name="title color" value="">
+        <textarea name="message" id="big_mess" rows="8" cols="80"></textarea>
+        <input type="color" id="pick_c2" name="message color" value="">
+        <button type="submit" id="upload" name="button">Submit</button>
+
+      </form>
+
+    </div>
+
+    <div class="right">
+      <h1 id="show_title">Title display</h1>
+      <p id="show_mess">message display</p>
+
+    </div>
+
+  </div>
+
+</body>
+
+<script>
+
+  const enter_title = document.getElementById('enter_title')
+  const pick_c1 = document.getElementById('pick_c1')
+  const big_mess = document.getElementById('big_mess')
+  const pick_c2 = document.getElementById('pick_c2')
+  const upload = document.getElementById('upload')
+  const show_title = document.getElementById('show_title')
+  const show_mess = document.getElementById('show_mess')
+
+
+  enter_title.addEventListener('input', displayChanges)
+  function displayChanges(e) {
+    document.getElementById("show_title").innerHTML = document.getElementById("enter_title").value
+  }
+
+  big_mess.addEventListener('input', displayMessage)
+  function displayMessage(e) {
+    document.getElementById("show_mess").innerHTML = document.getElementById("big_mess").value
+  }
+
+  pick_c1.addEventListener('input', displayColor1)
+  function displayColor1(e) {
+    document.getElementById("show_title").style.color = document.getElementById("pick_c1").value
+  }
+
+  pick_c2.addEventListener('input', displayColor2)
+  function displayColor2(e) {
+    document.getElementById("show_mess").style.color = document.getElementById("pick_c2").value
+  }
+
+
+
+</script>
+
+</html>
