@@ -6,7 +6,6 @@
   <title>Color-Picker</title>
 
   <style>
-
     .container {
       display: flex;
       flex-direction: row;
@@ -16,7 +15,6 @@
       display: flex;
       flex-direction: column;
     }
-
   </style>
 
 </head>
@@ -34,6 +32,15 @@
         <input type="color" id="pick_c2" name="message color" value="">
         <button type="submit" id="upload" name="button">Submit</button>
 
+        <label for="font_picker">Choose a Font:</label>
+
+        <select id="font_picker">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Impact">Impact</option>
+          <option value="Georgia">Georgia</option>
+        </select>
+
       </form>
 
     </div>
@@ -49,7 +56,6 @@
 </body>
 
 <script>
-
   const enter_title = document.getElementById('enter_title')
   const pick_c1 = document.getElementById('pick_c1')
   const big_mess = document.getElementById('big_mess')
@@ -57,36 +63,39 @@
   const upload = document.getElementById('upload')
   const show_title = document.getElementById('show_title')
   const show_mess = document.getElementById('show_mess')
+  const font_picker = document.getElementById('font_picker')
 
 
   enter_title.addEventListener('input', displayChanges)
+
   function displayChanges(e) {
     document.getElementById("show_title").innerHTML = document.getElementById("enter_title").value
   }
 
   big_mess.addEventListener('input', displayMessage)
+
   function displayMessage(e) {
     document.getElementById("show_mess").innerHTML = document.getElementById("big_mess").value
   }
 
   pick_c1.addEventListener('input', displayColor1)
+
   function displayColor1(e) {
     document.getElementById("show_title").style.color = document.getElementById("pick_c1").value
   }
 
   pick_c2.addEventListener('input', displayColor2)
-  function displayColor2(e) {
-    document.getElementById("show_mess").style.color = document.getElementById("pick_c2").value
-  }
-  
-  /*
-  pick_c2.addEventListener('input', displayColor2)
-  function displayColor2(e) {
-    document.getElementById("show_mess").style.color = document.getElementById("pick_c2").value
-  }
-  
-  */
 
+  function displayColor2(e) {
+    document.getElementById("show_mess").style.color = document.getElementById("pick_c2").value
+  }
+
+  font_picker.addEventListener('input', changeFont)
+
+  function changeFont(e) {
+    document.getElementById("show_title").style.font = document.getElementById("font_picker").value
+    document.getElementById("show_mess").style.font = document.getElementById("font_picker").value
+  }
 
 
 </script>
