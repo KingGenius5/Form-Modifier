@@ -41,6 +41,9 @@
           <option value="Georgia">Georgia</option>
         </select>
 
+        <input type="range" id="size_title" name="" value="" min="11" max="60">
+        <input type="range" id="size_mess" name="" value="" min="11" max="60">
+
       </form>
 
     </div>
@@ -64,6 +67,8 @@
   const show_title = document.getElementById('show_title')
   const show_mess = document.getElementById('show_mess')
   const font_picker = document.getElementById('font_picker')
+  const size_title = document.getElementById('size_title')
+  const size_mess = document.getElementById('size_mess')
 
 
   enter_title.addEventListener('input', displayChanges)
@@ -96,6 +101,19 @@
     document.getElementById("show_title").style.fontFamily = document.getElementById("font_picker").value
     document.getElementById("show_mess").style.fontFamily = document.getElementById("font_picker").value
   }
+
+  size_title.addEventListener('input', changeSize)
+
+  function changeSize(e) {
+    document.getElementById("show_title").style.fontSize = document.getElementById("size_title").value
+  }
+
+  size_mess.addEventListener('input', changeSize2)
+
+  function changeSize2(e) {
+    document.getElementById("show_mess").style.fontSize = document.getElementById("size_mess").value
+  }
+
 
 
 </script>
