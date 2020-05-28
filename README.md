@@ -1,5 +1,5 @@
 # Form-Modifier
 
-[Link to assessment w/stretch challenges I need to complete.](https://github.com/Make-School-Courses/FEW-1.1-Web-Foundations/tree/master/assessments)
+A JavaScript app that plays around with input and CSS styling.
 
-Need to do challenges 12 and 13.
+[Link to assessment w/stretch challenges I need to complete.](https://github.com/Make-School-Courses/FEW-1.1-Web-Foundations/tree/master/assessments)
